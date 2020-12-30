@@ -50,13 +50,13 @@ def handle_client(tcpCliSock,addr):
                         if data == ctrCmd[2]:
                                 print("ACC")
                                 global pwm
-                                if pwm < 80:
+                                if pwm < 100:
                                         pwm = pwm + 5
                                 nema17.start(pwm)
                                 print(pwm)
                         if data == ctrCmd[3]:
                                 print("DEACC")
-                                if pwm > 30:
+                                if pwm > 0:
                                         pwm = pwm - 5
                                 nema17.start(pwm)
                                 print(pwm)
